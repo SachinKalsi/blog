@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Contact
+title: Contact1
 tagline: Create a contact form and you are good to go
+published: true
 ---
 
 Jekyll is a great tool to create static sites but with static site, there's no backend to send your data to: that is why it's hard to put a form on a Jekyll site.
