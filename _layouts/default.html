@@ -81,7 +81,9 @@
 
     <section class="main-content">
 
-      {{ content }}
+      {% if page.layout != 'home' %}
+      	{{ content }}
+      {% endif %}
 
       <footer class="site-footer">
         <!-- SVG icons from https://iconmonstr.com -->
