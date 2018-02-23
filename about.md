@@ -3,7 +3,7 @@ layout: page
 title: About
 tagline: A few more words about this theme
 permalink: /about.html
-published: false
+published: true
 ---
 
 This is the _Cayman Blog_ Jekyll theme. You can find out more info about customizing this theme, as well as basic usage documentation, and source code at: [cayman-blog](https://github.com/lorepirri/cayman-blog)
