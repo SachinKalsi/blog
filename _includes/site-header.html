@@ -6,6 +6,12 @@
 
     {% if page.layout != 'home' %}
       <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    {% else %}
+    <nav class="site-nav">
+      <div class="trigger">
+                  <a class="page-link" href="http://sachinkalsi.me">About_Me</a>
+      </div>
+    </nav>
     {% endif %}
 
     {% if page_paths %}
@@ -33,9 +39,7 @@
           {% endfor %}
         </div>
         -->
-        <div class="trigger">
-                <a class="page-link" href="http://sachinkalsi.me">About_Me</a>
-        </div>
+        
       </nav>
     {% endif %}
   </div>
