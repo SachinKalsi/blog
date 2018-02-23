@@ -1,5 +1,6 @@
 ---
 layout: default
+published: true
 ---
 
 <div>
@@ -11,7 +12,7 @@ layout: default
   <div>&nbsp;</div>
 
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit:3%}
       <li>
 
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
