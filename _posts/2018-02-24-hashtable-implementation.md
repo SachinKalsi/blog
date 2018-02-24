@@ -1,6 +1,6 @@
 ---
 published: true
-title: HASHTABLE IMPLEMENTATION â€“ GENERAL WAY
+title: null
 ---
 ## Hashtable implementation - a general way
 
