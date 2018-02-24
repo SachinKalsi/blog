@@ -5,9 +5,16 @@
     {% assign page_paths = site.header_pages | default: default_paths %}
 
     {% if page.layout != 'home' %}
-      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title" href="{{ "/" | relative_url }}">Blog Posts</a>
+    {% else %}
+    <nav class="site-nav">
+      <div class="trigger">
+                  <a class="page-link" href="http://sachinkalsi.me">About me</a>
+      </div>
+    </nav>
     {% endif %}
 
+   <!--
     {% if page_paths %}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -20,7 +27,7 @@
             </svg>
           </span>
         </label>
-
+		<!--
         <div class="trigger">
           {% for path in page_paths %}
             {% assign my_page = site.pages | where: "path", path | first %}
@@ -32,7 +39,10 @@
             {% endif %}
           {% endfor %}
         </div>
+       
+        
       </nav>
     {% endif %}
+     -->
   </div>
 </header>
