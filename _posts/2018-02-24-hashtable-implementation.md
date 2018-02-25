@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 title: Hashtable implementation - a general way
 ---
 A hash table is a data structure that maps keys to values for highly efficient lookup.There are several ways to implement the hash table. Here I would like to describe a simple and common implementation.

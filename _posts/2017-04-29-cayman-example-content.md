@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Example content"
-publish: false
+published: false
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
