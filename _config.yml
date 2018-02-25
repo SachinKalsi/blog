@@ -1,7 +1,8 @@
 title: Sachin Kalsi
 description: Passionate Programmer
 show_downloads: false
-
+collections:
+- _algorithms
 baseurl: "/blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "http://sachinkalsi.me" # change this to the base hostname & protocol for your site
 github:
@@ -20,4 +21,3 @@ image: /thumbnail-jumbo.png
 twitter:
   username: sachin_kalsi
 #  site:
-
