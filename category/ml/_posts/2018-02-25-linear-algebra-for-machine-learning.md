@@ -1,3 +1,6 @@
+---
+tags: machine learning
+---
 Basic Mathematics, especially linear algebra, required for machine learning
 
 ## Distance between two points
