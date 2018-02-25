@@ -28,7 +28,10 @@ published: true
     {% endfor %}
   </ul>
   <p>now</p>
+  {% assign algos = site.algorithms | where: "category", "algo" %}
   {{ site.algorithms }}
+  {{ algos }}
+  <p>done</p>
   <ul class="post-list">
     {% for post in site.categories[page.algorithms] %}
      <li>
