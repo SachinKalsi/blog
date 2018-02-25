@@ -2,6 +2,7 @@
 published: true
 title: Hashtable implementation - a general way
 categories: algo
+category: algo
 ---
 A hash table is a data structure that maps keys to values for highly efficient lookup.There are several ways to implement the hash table. Here I would like to describe a simple and common implementation.
 
