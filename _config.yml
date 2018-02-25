@@ -14,9 +14,6 @@ cayman-blog:
 
 theme: jekyll-theme-cayman
 
-google:
-    google-site-verification: "Kkv_GseXpgmWoM1XhKHl1xiRFtc0Y2WLaNwVXjURA0A"
-
 # social
 author: "Sachin Kalsi"
 image: /thumbnail-jumbo.png
