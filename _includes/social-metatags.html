@@ -62,6 +62,9 @@
   <meta name="twitter:site" content="@{{ site.twitter.site }}">
 {%endif %}
 
+{%if site.google.google-site-verification %}
+    <meta name="google-site-verification" content="@{{ site.twitter.google-site-verification }}" />
+{%endif %}
 <meta name="twitter:title" content="{{ page_title }}">
 <meta name="twitter:description" content="{{ page_description }}">
 

@@ -3,6 +3,7 @@ description: Passionate Programmer
 show_downloads: false
 baseurl: "/blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "http://sachinkalsi.me" # change this to the base hostname & protocol for your site
+email: "sachinkalsi15@gmail.com"
 github:
   is_project_page: false
 google_analytics:
@@ -12,6 +13,9 @@ cayman-blog:
   date_format: "%b %-d, %Y"
 
 theme: jekyll-theme-cayman
+
+google:
+    google-site-verification: "Kkv_GseXpgmWoM1XhKHl1xiRFtc0Y2WLaNwVXjURA0A"
 
 # social
 author: "Sachin Kalsi"
