@@ -1,3 +1,4 @@
+Basic Mathematics, especially linear algebra, required for machine learning
 
 ## Distance between two points
 
@@ -67,3 +68,5 @@
     where a = distance of a from origin & b = distance of b from origin
     
     $$\theta =arccos(\frac{a^T.b}{|a| * |b|})$$
+    
+#### I will update this post as & when I get more time. Please <a href="mailto:sachinkalsi15@gmail.com">contact me</a> regarding any queries
