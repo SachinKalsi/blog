@@ -1,5 +1,6 @@
 ---
-tags: machine learning
+tags: 'machine learning, mathematics, linear algebra'
+published: true
 ---
 Basic Mathematics, especially linear algebra, required for machine learning
 
