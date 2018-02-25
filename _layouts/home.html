@@ -28,7 +28,7 @@ published: true
     {% endfor %}
   </ul>
   <p>abcd</p>
-  site.categories[page.algorithms]
+  {{ site.categories }}
   <ul class="post-list">
     {% for post in site.categories[page.algorithms] %}
      <li>
