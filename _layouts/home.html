@@ -12,7 +12,7 @@ published: true
   <div>&nbsp;</div>
 
   <ul class="post-list">
-    {% for post in site.posts limit:3 %}
+    {% for post in site.posts%}
       <li>
 
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
@@ -27,11 +27,10 @@ published: true
       </li>
     {% endfor %}
   </ul>
-  <p>now</p>
-  {% assign algos = site.algorithms | where: "category", "algo" %}
-  {{ site.algorithms }}
-  {{ algos }}
-  <p>fff</p>
+  <p>
+      Hey
+  </p>
+  {{ site.categories}}
   <ul class="post-list">
     {% for post in site.categories[page.algorithms] %}
      <li>
