@@ -2,7 +2,7 @@
 tags: 'machine learning, mathematics, linear algebra'
 published: true
 ---
-Basic Mathematics, especially linear algebra, required for machine learning
+Linear algebra for machine learning
 
 ## Distance between two points
 
