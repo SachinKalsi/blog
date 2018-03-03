@@ -96,11 +96,11 @@ a {
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
-  
+
   @include large {
     padding: 3rem 6rem;
   }
-  
+
 
   @include medium {
     padding: 3rem 4rem;
@@ -299,9 +299,10 @@ a {
   }
 
   table {
-    display: block;
+    display: contents;
     width: 100%;
     overflow: auto;
+    border-collapse: collapse;
     word-break: normal;
     word-break: keep-all; // For Firefox to horizontally scroll wider tables.
     -webkit-overflow-scrolling: touch;
