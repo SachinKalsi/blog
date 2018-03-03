@@ -1,5 +1,5 @@
 ---
-tags: 'machine learning, mathematics, linear algebra'
+tags: 'machine learning, mathematics, linear algebra, hyper plane'
 published: true
 ---
 Linear algebra for machine learning
