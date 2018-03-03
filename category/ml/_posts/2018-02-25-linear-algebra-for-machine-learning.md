@@ -8,7 +8,7 @@ ___
 
 ## 1. Distance between two points
 
-* Let A & B be two points in 2 dimentional geometry.
+* Let A & B be two points in 2 dimensional geometry.
 
     $$A = (x_1, y_1)$$
 
@@ -43,7 +43,7 @@ ___
 
         if p == 2, minkowski distance will converge into Euclidean distance
 
-* If A & B points are in n dimentional geometry, then
+* If A & B points are in n dimensional geometry, then
 
     $$A = ( {x_{a1},x_{a2}, x_{a3}, ....x_{an}} )$$
 
@@ -62,7 +62,7 @@ ___
 
 ## 2.  Dot product and angle between 2 vectors
 
-a & b points are in n dimentional vectors, i.e.,
+a & b points are in n dimensional vectors, i.e.,
 
 $$a = ({a_1,a_2,a_3, ... a_n})$$
 
@@ -90,7 +90,7 @@ $$\theta =arccos(\frac{a^T.b}{|a| * |b|})$$
 ## 3.  Equation of a line, plane
 
 <p class='note'> Line in 2D = Plane in 3D = hyper plane in nD</p>
-- #### 2 dimentional geometry
+- #### 2 dimensional geometry
 
     The equation of a line in 2D is
     $$ax+by+c=0$$
@@ -104,13 +104,13 @@ $$\theta =arccos(\frac{a^T.b}{|a| * |b|})$$
 
     $$w_1x_1+w_2x_2=0$$
 
-- #### 3 dimentional geometry
+- #### 3 dimensional geometry
 
     Equation of a plane in 3D passing through the origin (0,0)
 
     $$w_1x_1+w_2x_2+w_3x_3=0$$
 
-- #### n dimentional geometry
+- #### n dimensional geometry
 
     Equation of a plane in nD passing through the origin (0,0)
 
@@ -158,7 +158,7 @@ $$ d = a.b$$
 
 ## 5. Distance of a point from a plane
 
-Let $$p$$ be any point in $$n$$ dimentional geometry, which is at a distance $$d$$ from the hyper plane $$\pi_n$$.
+Let $$p$$ be any point in $$n$$ dimensional geometry, which is at a distance $$d$$ from the hyper plane $$\pi_n$$.
 
 Let $$w$$ be a vector passing through origin (0,0)
 
