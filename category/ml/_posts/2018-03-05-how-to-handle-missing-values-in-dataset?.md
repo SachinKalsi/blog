@@ -4,7 +4,7 @@ published: true
 image: 'data/images/blog_posts/handle_missing_values.jpg'
 ---
 
-Missing values in a dataset is very much common in real time. Taking action on such missing values is inevitable because missing data causes problems.
+Missed values in a dataset is very much common in real time. Taking action on such missed values is inevitable because missed data causes problems.
 
 ## Lets take a sample dataset.
 
@@ -23,13 +23,13 @@ ___
 - A cell is represented as (row_id, column_id). Features F1 ,F2, F3, F4 corresponds to column id of 1,2,3,4 respectively
 - As we can see the values for the cells (3,3) & (4,2) are not given. (None means empty value)
 
-Here I will be discussing some techniques to handle the missing values.
+Here I have discussed some techniques to handle the missed values.
 
-## 1. Remove rows (data points) with missing values
+## 1. Remove rows (data points) with missed values
 
 This is the simplest strategy to handle missed values
 
-## 2. Imputation (Replacing the missed values)
+## 2. Imputation (Replace the missed values)
 
 - Replacing the missed values by **mean (average) or median or mode** (most frequently occurred value)
 
@@ -51,7 +51,7 @@ This is the simplest strategy to handle missed values
 
 Missed values can also become source of information.
 
-__Example__: Lets say we are collecting **age, sex, weight, height, hair color** of all peoples in a village. Here hair color is an interesting attribute. Some people might have grey color hair, black color hair, white color hair etc. But what about the people who do not have hairs at all? These people will leave the field **hair color** empty.
+__Example__: Lets say we have collected **age, sex, weight, height, hair color** of all peoples in a village. Here hair color is an interesting attribute. Some people might have grey color hair, black color hair, white color hair etc. But what about the people who do not have hairs at all? These people might leave the field **hair color** empty.
 
 So if hair color field is empty, then it says particular person is not having hairs & it could be an important information to note.
 
@@ -83,7 +83,7 @@ We use **Missing value features (<span style='color:red'>Binary</span>)** to ind
 
 ## 4. Model based Imputation
 
-In this technique, we assume the feature, for which the values are missing for some data points, as class label & we predict the missed value using the algorithms like K-NN etc.
+In this technique, we assume the feature, for which the values are missing for some data points, as class label & we predict the missed value by using the algorithms like K-NN etc.
 
 __Example__: Lets assume, we got the value for the cell (3, 3) as 1 (by using Impute based on class labels technique). Now sample data looks like below.
 
@@ -98,7 +98,7 @@ __Example__: Lets assume, we got the value for the cell (3, 3) as 1 (by using Im
 |   6  |  8   |  13 |  5  |  90  |  0   |
 |   7  |  12  |  10 |  1  |  72  |  1   |
 
-As we can see, **_F2_** is the feature for which the value is missing at the cell (4,2). So **_F2_** becomes the class label. Now we need to predict the value for the cell (4,2). Modified data set looks as shown below.
+As we can see, **_F2_** is the feature for which the value is missed at the cell (4,2). So **_F2_** becomes the class label. Now we need to predict the value for the cell (4,2). Modified data set looks as shown below.
 
 |  ID  |  F1  | <span style="color:red">F (earlier **_class label_**)</span> |  F3  |  F4  | <span style="color:red">class label (earlier **_F2_**)</span> |
 | :---: |:---: |:---:|:---: |:---: |:---: |
