@@ -53,7 +53,7 @@ Missed values can also become source of information.
 
 __Example__: Lets say we are collecting **age, sex, weight, height, hair color** of all peoples in a village. Here hair color is an interesting attribute. Some people might have grey color hair, black color hair, white color hair etc. But what about the people who do not have hairs at all? These people will leave the field **hair color** empty.
 
-So if hair color field is empty, then it says that particular person is not having hairs & it could be an important information to note.
+So if hair color field is empty, then it says particular person is not having hairs & it could be an important information to note.
 
 So we store these information in separate fields as shown below.
 
@@ -85,7 +85,7 @@ We use **Missing value features (<span style='color:red'>Binary</span>)** to ind
 
 In this technique, we assume the feature, for which the values are missing for some data points, as class label & we predict the missed value using the algorithms like K-NN etc.
 
-__Example__: Lets assume that, we got the value for the cell (3, 3) as 1 (by using Impute based on class labels technique). Now sample data looks like below.
+__Example__: Lets assume, we got the value for the cell (3, 3) as 1 (by using Impute based on class labels technique). Now sample data looks like below.
 
 
 |  ID  |  F1  | F2  |  F3  |  F4  | class label |
