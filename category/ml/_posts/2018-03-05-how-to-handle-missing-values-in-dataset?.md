@@ -21,6 +21,7 @@ Missed values in a dataset is very much common in real time. Taking action on su
 ___
 - The sample data set contains 7 data points & 4 features and 1 class label.
 - A cell is represented as (row_id, column_id). Features F1 ,F2, F3, F4 corresponds to column id of 1,2,3,4 respectively
+- All the features
 - As we can see the values for the cells (3,3) & (4,2) are not given. (None means empty value)
 
 Here I have discussed some techniques to handle the missed values.
@@ -111,6 +112,11 @@ As we can see, **_F2_** is the feature for which the value is missed at the cell
 |   4  |  10  | 0|  2  |  90  |  <span style="color:red">None</span>   |
 
 Now using an algorithm like KNN, we can predict the missed values.
+
+
+## 5. Removal of feature:
+
+If a feature contains too much of missed values, then it is better to remove the feature because the feature is not making any **\*sense\*** & it is not adding any value
 
 ___
 
