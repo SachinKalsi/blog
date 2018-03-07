@@ -21,7 +21,7 @@ Missed values in a dataset is very much common in real time. Taking action on su
 ___
 - The sample data set contains 7 data points & 4 features and 1 class label.
 - A cell is represented as (row_id, column_id). Features F1 ,F2, F3, F4 corresponds to column id of 1,2,3,4 respectively
-- All the features
+- It is assumed that data is pre-processed, and all the missed values are represented by **None** value
 - As we can see the values for the cells (3,3) & (4,2) are not given. (None means empty value)
 
 Here I have discussed some techniques to handle the missed values.
