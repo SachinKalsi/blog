@@ -54,6 +54,9 @@
     {% if page.layout == 'post' %}
       {% assign page-tagline = page.tagline | escape  %}
     {% endif %}
+    {%if page.min_to_read %}
+        {% assign min_to_read = page.min_to_read %}
+    {%endif %}
 
     <section class="page-header">
       <h1 class="project-name">{{ page-title }}</h1>
@@ -75,6 +78,9 @@
         {% assign page_author = page.author | default: site.author | default: nil | escape %}
         {% if page_author %}
           • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page_author }}</span></span>
+        {% endif %}
+        {%if min_to_read%}
+            <p class="readingTime" > {{min_to_read}}  min read</p>
         {% endif %}
         </h2>
       {% endif %}

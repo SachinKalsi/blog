@@ -2,6 +2,7 @@
 tags: 'machine learning, missing values in features'
 published: true
 image: 'data/images/blog_posts/handle_missing_values.jpg'
+min_to_read: 4
 ---
 
 Missed values in a dataset is very much common in real time. Taking action on such missed values is inevitable because missed data causes problems.
