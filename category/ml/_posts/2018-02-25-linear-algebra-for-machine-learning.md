@@ -178,7 +178,20 @@ $$d$$ is positive since $$\theta$$ is less than 90$$^\circ$$
 
 Similary we can calculate the distance of the point $$p'$$ from the plane $$\pi_n$$. Since $$\theta'$$ is greater than $$90^\circ$$, the distance will be negative.
 
-In this way, we can decide in which side of the plane a point lies
+In this way, we can decide in which side of the plane a point lies.
+
+## 6. Equation of a circle
+
+Let C be the center of the circle & P be the locus of the center of the circle.
+      
+$$C = (x`, y`)$$
+
+$$P = (x, y)$$
+
+
+![]({{site.baseurl}}data/images/circle.png)
+
+Let $$r$$ be the radius of the circle
 
 ___    
 I will update this post as & when I get time. Please <a href="mailto:sachinkalsi15@gmail.com">contact me</a> regarding any queries or suggestions.
