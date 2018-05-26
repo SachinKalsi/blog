@@ -182,7 +182,7 @@ In this way, we can decide in which side of the plane a point lies.
 
 ## 6. Equation of a circle
 
-Let C be the center of the circle & P be the locus of the center of the circle.
+Let $$C$$ be the center of the circle & $$P$$ be the locus of the center of the circle.
       
 $$C = (x`, y`)$$
 
@@ -192,6 +192,17 @@ $$P = (x, y)$$
 ![]({{site.baseurl}}data/images/circle.png)
 
 Let $$r$$ be the radius of the circle
+
+
+$$r = \sqrt{(x-x`)^2 + (y-y`)^2} $$  
+
+$$=> (x-x`)^2 + (y-y`)^2 = r^2 $$
+
+If the center of the cirlce is origin i.e., $$(0, 0)$$, then the equation of the circle is given as
+
+$$\boldsymbol{ x^2 + y^2 = r^2} $$
+
+
 
 ___    
 I will update this post as & when I get time. Please <a href="mailto:sachinkalsi15@gmail.com">contact me</a> regarding any queries or suggestions.
