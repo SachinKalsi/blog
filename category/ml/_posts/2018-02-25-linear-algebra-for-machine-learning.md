@@ -202,7 +202,5 @@ If the center of the cirlce is origin i.e., $$(0, 0)$$, then the equation of the
 
 $$\boldsymbol{ x^2 + y^2 = r^2} $$
 
-
-
 ___    
 I will update this post as & when I get time. Please <a href="mailto:sachinkalsi15@gmail.com">contact me</a> regarding any queries or suggestions.
