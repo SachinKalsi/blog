@@ -7,8 +7,8 @@ min_to_read: 10
 There are various machine learning algorithms like KNN, Naive Bayes, Logistic Regression, Linear Regression, SVM, Ensemble models etc etc. But how do you measure the performance of these models ? Is there any one metric which will define how good a model is ? Well, in this blog I will discuss about the important KPIs (Key Performance Indicators) to measure the performance of a Machine Learning Model
 
 
-1. Accuracy
-2. Confusion matrix
+1. <A href="#accuracy">Accuracy</A>
+2. <A href="#confusion-matrix">Confusion matrix</A>
 3. Precision, Recall & F1 score
 4. Area Under The Curve (AUC)
 5. Log-loss
@@ -20,7 +20,8 @@ __Sample dataset__: I will consider a sample test dataset to explain the metrice
 
 <p class='note'> P.S: We measure the performance of models based only on TEST data and NOT on train data/ cross-validation data. </p>
 
-## 1. Accuracy
+
+## Accuracy
 
 Accuracy is the most easiest metric to understood & to implement as well. Accuracy is nothing but the ratio of correctly classified data points to the total number of data points.
 
@@ -57,6 +58,6 @@ Where,
 As we can see, both M1 & M2 models predicted the same Y's & have same accuracy.But if you see probability scores of M1 & M2, the model M1 is performaning better than the model M2, since the probability scores are high for the M1 model, whereas for the model M2,the probability scores are almost half
 
 
-## 2. Confusion matrix:
+## Confusion matrix:
 
 __Coming soon__
