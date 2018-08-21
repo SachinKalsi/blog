@@ -9,7 +9,7 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 
 1. <A href="#accuracy">Accuracy</A>
 2. <A href="#confusion-matrix">Confusion matrix</A>
-3. Precision, Recall & F1 score
+3. <A href="#precision-recall-f1-score">Precision, Recall & F1 score</A>
 4. Area Under The Curve (AUC)
 5. Log-loss
 6. R-Squared Coefficient
@@ -114,3 +114,9 @@ __Example__: Consider a highly imbalanced dataset like credit card fraud detecti
 In Confusion matrix we have 4 numbers, how one will know which one is important? Well, it depends on the dataset.
 
 __Example__: If the dataset is cancer detection/credit card fraud detection, then we want high TPR and very less or 0 FNR. 
+
+<p class='note'>Cons</p>
+
+1. __Can not take probability scores__: Confusion matrix don't take probability scores into consideration. It will just consider the predicted Y values. 
+
+## Precision, Recall, F1 score
