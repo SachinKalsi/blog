@@ -76,7 +76,7 @@ __FP (False Positive)__ :  number of data points for which Y = 0 & Y^ = 1
 
 __TP (True Positive)__  :  number of data points for which Y = 1 & Y^ = 1
 
-<p class='note'><i>Tip to remember</i> </p> Here is a tip to remember what I learnt in <a target="_blank" href="https://www.appliedaicourse.com/">Applied AI course</a>
+<i class='note'>Tip to remember: </i> Here is a tip to remember which I learned from <a target="_blank" href="https://www.appliedaicourse.com/">Applied AI course</a>
 
 ![confusion_matrix_tip]({{site.baseurl}}data/images/cm_tip.png)
 
