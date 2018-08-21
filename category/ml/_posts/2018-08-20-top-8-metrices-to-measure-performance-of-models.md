@@ -58,6 +58,59 @@ Where,
 As we can see, both M1 & M2 models predicted the same Y's & have same accuracy.But if you see probability scores of M1 & M2, the model M1 is performaning better than the model M2, since the probability scores are high for the M1 model, whereas for the model M2,the probability scores are almost half
 
 
-## Confusion matrix:
+## Confusion matrix: 
 
-__Coming soon__
+Confusion matrix is a matrix used to describe the performance of a classification model. It solves the problem the accuracy metric had with the imbalanced dataset
+
+Lets consider a binary classification problem i.e., Y belongs to 0 or 1. 0 being negative label & 1 being positive label. Let Y be the actual values & Y^ be the predicted values
+
+![confusion_matrix]({{site.baseurl}}data/images/confusion_matrix.png)
+
+where,
+
+__TN (True Negative)__  :  number of data points for which Y = 0 & Y^ = 0
+
+__FN (False Negative)__ :  number of data points for which Y = 1 & Y^ = 0
+
+__FP (False Positive)__ :  number of data points for which Y = 0 & Y^ = 1
+
+__TP (True Positive)__  :  number of data points for which Y = 1 & Y^ = 1
+
+<p class='note'><i>Tip to remember</i> </p> Here is a tip to remember what I learnt in <a target="_blank" href="https://www.appliedaicourse.com/">Applied AI course</a>
+
+![confusion_matrix_tip]({{site.baseurl}}data/images/cm_tip.png)
+
+__Example__: Lets consider the case Y = 0, Y^ = 0. Here predicted value is 0, i.e, Negative (N)
+ & the it is correct (T) (since the actual value is also Negative). So it becomes __True Negative (TN)__
+ 
+If we have a multi class classification, then confusion matrix size would be CxC, where C is the number of class labels.
+
+![confusion_matrix_multi_class_classification]({{site.baseurl}}data/images/cm_multi.png)
+
+If the model you trained is very good, then all the principle diagonal values will be high & non-principle diagonal values will be low or zero.
+
+Let P & N be the total number of Positive & Negative test data points respectively, Then
+
+$$TPR (True Positive Rate) = TP/P$$
+
+$$TNR (True Negative Rate) = TN/N$$
+
+$$FPR (False Positive Rate) = FP/P$$
+
+$$FNR (False Negative Rate) = FN/N$$
+
+In layman language, 
+
+TPR = Percentage of correctly classified positive points
+ 
+TNR = Percentage of correctly classified negative points
+
+FPR = Percentage of incorrectly classified positive points
+
+FNR = Percentage of incorrectly classified negative points.
+
+__Example__: Consider a highly imbalanced dataset like credit card fraud detection, where >99% of the data points are negative. Lets say we have very dumb model which will always predict negative, irrespective of given data points (i.e., X). And if we calculate the Confusion matrix for this dumb model, then TNR will be 100 & TPR will be zero but FNR will be high which indicats the model is very dumb
+
+In Confusion matrix we have 4 numbers, how one will know which one is important? Well, it depends on the dataset.
+
+__Example__: If the dataset is cancer detection/credit card fraud detection, then we want high TPR and very less or 0 FNR. 
