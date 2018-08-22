@@ -10,7 +10,7 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 1. <A href="#accuracy">Accuracy</A>
 2. <A href="#confusion-matrix">Confusion matrix</A>
 3. <A href="#precision-recall-f1-score">Precision, Recall & F1 score</A>
-4. Area Under The Curve (AUC)
+4. <A href="#area-under-the-curve-auc">Area Under The Curve (AUC)</A>
 5. Log-loss
 6. R-Squared Coefficient
 7. Median absolute deviation (MAD)
@@ -120,3 +120,27 @@ __Example__: If the dataset is cancer detection/credit card fraud detection, the
 1. __Can not take probability scores__: Confusion matrix don't take probability scores into consideration. It will just consider the predicted Y values. 
 
 ## Precision, Recall, F1 score
+
+Precision & Recall are used in information retrieval, pattern recognition & binary classification. Please refer <a target="_blank" href="https://en.wikipedia.org/wiki/Precision_and_recall">Wiki</a> for info. Precision & Recall considers only the positive class labels.
+
+$$Precision = \frac{TP}{FP+TP}$$
+
+$$Recall = \frac{TP}{FN+TP}$$
+
+In layman language,
+
+__Precision__: Of all the predicted POSITIVE labels, how many of them are actually POSITIVE
+
+__Recall__: Of all the actual POSITIVE labels, how many of them are correctly predicted as POSITIVE.
+
+We always want Precision & Recall to be high. Precision & Recall values ranges from 0 to 1
+
+__F1 Score__: It is a single measurement, which considers both Precision & Recall to compute the score. It is basically the harmonic mean of Precision & Recall. The value of F1 score ranges from 0 to 1.
+
+$$F1 score = 2 *\frac{Precision*Recall}{Precision+Recall}$$
+
+This metric is extensively used in <a target="_blank" href="https://www.kaggle.com/">Kaggle</a> compitations. But Precision & Recall is more interpretable or I can say F1 score is difficult to interpret.
+
+## Area Under The Curve (AUC)
+
+Coming soon
