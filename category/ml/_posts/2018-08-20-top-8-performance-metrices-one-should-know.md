@@ -87,7 +87,7 @@ If we have a multi class classification, then confusion matrix size would be CxC
 
 ![confusion_matrix_multi_class_classification]({{site.baseurl}}data/images/cm_multi.png)
 
-If the model you trained is very good, then all the principle diagonal values will be high & non-principle diagonal values will be low or zero.
+If the model you trained is very good, then all the <a href="https://en.wikipedia.org/wiki/Main_diagonal" target="_blank">principle diagonal values</a> will be high & non-principle diagonal values will be low or zero.
 
 Let P & N be the total number of Positive & Negative test data points respectively, Then
 
