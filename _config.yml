@@ -28,5 +28,5 @@ defaults:
     values:
       unpublished: true
       
-gems: 
-  - jekyll-sitemap
+gems:
+      - jekyll-sitemap
