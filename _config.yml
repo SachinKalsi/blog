@@ -27,3 +27,5 @@ defaults:
       path: "_posts"
     values:
       unpublished: true
+      
+gems: - jekyll-sitemap
