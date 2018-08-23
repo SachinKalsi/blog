@@ -11,7 +11,7 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 1. <A href="#accuracy">Accuracy</A>
 2. <A href="#confusion-matrix">Confusion matrix</A>
 3. <A href="#precision-recall-f1-score">Precision, Recall & F1 score</A>
-4. <A href="#area-under-the-curve-auc">Area Under The Curve (AUC)</A>
+4. <A href="#receiver-operating-characteristic-curve-roc">Receiver Operating Characteristic Curve (ROC)</A>
 5. Log-loss
 6. R-Squared Coefficient
 7. Median absolute deviation (MAD)
@@ -102,13 +102,13 @@ $$FNR (False Negative Rate) = FN/N$$
 
 In layman language, 
 
-TPR = Percentage of correctly classified positive points
+__TPR__ = Percentage of correctly classified positive points
  
-TNR = Percentage of correctly classified negative points
+__TNR__ = Percentage of correctly classified negative points
 
-FPR = Percentage of incorrectly classified positive points
+__FPR__ = Percentage of incorrectly classified positive points
 
-FNR = Percentage of incorrectly classified negative points.
+__FNR__ = Percentage of incorrectly classified negative points.
 
 __Example__: Consider a highly imbalanced dataset like credit card fraud detection, where >99% of the data points are negative. Lets say we have very dumb model which will always predict negative, irrespective of given data points (i.e., X). And if we calculate the Confusion matrix for this dumb model, then TNR will be 100 & TPR will be zero but FNR will be high which indicats the model is very dumb
 
@@ -142,6 +142,74 @@ $$F1 score = 2 *\frac{Precision*Recall}{Precision+Recall}$$
 
 This metric is extensively used in <a target="_blank" href="https://www.kaggle.com/">Kaggle</a> compitations. But Precision & Recall is more interpretable or I can say F1 score is difficult to interpret.
 
-## Area Under The Curve (AUC)
+## Receiver Operating Characteristic Curve (ROC)
 
-Coming soon
+__ROC__ curve is a curve which is created by plotting TPR agains FPR. ROC Curve metric is applicable only for binary classification. Here is step by step procedure to draw ROC curve.
+
+Lets assume, the model which we are using gives some kind of scores like probability scores (<a target="_blank" href="https://goo.gl/65KPSr">pridict_prob</a>) in such a way that increase in score indicates higher probability of data point belonging to class 1. Lets assume Y^ denotes the predicted probability scores
+
+1 = POSITIVE class
+
+0 = NEGATIVE class
+
+__STEP 1__: Sort Y^ in descending order.
+
+|  X        |  Y (actual) | Y^ <br> prob(Y==1)   |
+| :---:     | :---:|:---:|
+| $${x_1}$$ |  1  |  0.94 |
+| $${x_2}$$ |  1  |  0.87 | 
+| $${x_3}$$ |  1  |  0.83 |
+| $${x_4}$$ |  0  |  0.80 |
+
+__STEP 2__: Thresholding ($$\tau$$).
+
+For each of the probability scores (lets say $${\tau_i}$$) in Y^ columns, if Y^ >= $${\tau_i}$$, then predicted label would be positive(1).
+
+
+|  X        |  Y (actual) | Y^  prob(Y==1)  | Y_predicted $$\tau$$ = 0.94|Y_predicted $$\tau$$ = 0.87|Y_predicted $$\tau$$ = 0.83 | Y_predicted $$\tau$$ = 0.80|
+| :---:     | :---:|  :---:|:---:|:--: |:--: |:--: |
+| $${x_1}$$ |  1   |  0.94 |  1  |  1  |  1  |  1  |
+| $${x_2}$$ |  1   |  0.87 |  0  |  1  |  1  |  1  | 
+| $${x_3}$$ |  1   |  0.83 |  0  |  0  |  1  |  1  |
+| $${x_4}$$ |  0   |  0.80 |  0  |  0  |  0  |  1  |
+
+If we have __N__ data points, then we will have __N__ thresholds.
+
+__STEP 3__: For each of the Y_predicted ($${\tau_i}$$), calculate TPR & FPR.
+
+In our example
+
+|  X        |  TPR | FPR   |
+| :---:     | :---:|:---:|
+| $$\tau$$ = 0.94 |  0.33 |  0 |
+| $$\tau$$ = 0.87 |  0.66 |  0 | 
+| $$\tau$$ = 0.83 |  1    |  0 |
+| $$\tau$$ = 0.80 |  1    |  1 |
+
+
+If we have __N__ data points, then we will have __N__ TPR,FPR pairs.
+
+__STEP 4__: Plot TPR vs FPR by taking N TPR, FPR pair. Typically the Graph look like this
+
+![confusion_matrix]({{site.baseurl}}data/images/roc.png)
+
+<span class="note">P.S:</span> The example (TPR,FPR) pairs have not been plotted in the above graph 
+
+__Random Model__: Model which generates randomly 0 & 1's
+
+__Good Model__: Model which has high TPR & low FPR
+
+__Area Under ROC Curve (AOC)__: AOC is the area under the ROC curve. More the area under the curve, the more good is the model. A random model will have an AOC of 0.5
+
+<p class='note'>Cons</p>
+
+1. __Imbalanced dataset__: For a imbalanced dataset, a dumb model can give a high AUC.
+
+2. Depends on the ORDERing of the scores & doesn't depends the scores itself.
+
+3. Works only for binary classification problems
+
+<i>Converting a dumb model into a reasonable good model<i>
+![confusion_matrix]({{site.baseurl}}data/images/dumb_roc.png)
+
+A dumb model is one which has AUC an < 0.5 In that case just swap class labels i.e., change 1 to 0 & 0 to 1 (<code>Y_predicted = 1-Y_predicted</code>) to make it a reasonably good model
