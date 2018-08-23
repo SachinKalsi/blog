@@ -1,6 +1,7 @@
 ---
 tags: 'machine learning, mathematics, key performance indicators (KPIs)'
 published: true
+image: 'data/images/blog_posts/kpi.jpg'
 min_to_read: 10
 ---
 
