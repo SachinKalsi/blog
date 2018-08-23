@@ -1,6 +1,7 @@
 ---
 tags: 'machine learning, mathematics, linear algebra, hyper plane'
 published: true
+image: 'data/images/blog_posts/la.jpg'
 min_to_read: 7
 ---
 Linear algebra for machine learning
