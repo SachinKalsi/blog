@@ -7,6 +7,8 @@ In order to apply any Machine Learning algorithm, we have to convert all non-num
 
 Here I am going to discuss some of the methodolgies to convert text data into numerical vectors. A vector is nothing but a numerical array. Please look into [Linear Algebra]({{'/blog/category/ml/2018/02/25/linear-algebra-for-machine-learning.html' }}) section to know more about vectors & their properties.
 
+Also by converting text data to numerical array, we can measure similarity between the texts by using <a target="_blank" href="https://sachinkalsi.github.io/blog/category/ml/2018/02/25/linear-algebra-for-machine-learning.html#euclidean-distance" > Euclidean distance </a> or Cosine similarity
+
 Lets consider the following example.
 
 1. text1: <b>India is a beautiful country</b>
