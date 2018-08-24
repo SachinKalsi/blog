@@ -67,7 +67,7 @@ For each of the word in the text_data:
 
 It is the product of TF & IDF of a word.
 
-So TF-IDF value balances between the rare words in the document & high frequency words in the corpus. High value of IDF indicates, the word occurs very few times in the whole document corpus. And a high value of TF indicates, the word occurs more number of times in the text document.
+So TF-IDF value balances between the rare words in the document & highly frequent words in the corpus. High value of IDF indicates, the word occurs very few times in the whole document corpus. And a high value of TF indicates, the word occurs more number of times in the text document.
 
   1. TF-IDF Vector representation of text1 (India is a beautiful country)
   
