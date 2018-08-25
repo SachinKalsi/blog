@@ -14,7 +14,7 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 4. <A href="#receiver-operating-characteristic-curve-roc">Receiver Operating Characteristic Curve (ROC)</A>
 5. <A href="#log-loss"> Log-loss </A>
 6. <A href="#r-squared-coefficient"> R-Squared Coefficient </A>
-7. Median absolute deviation (MAD)
+7. <A href="#median-absolute-deviation-mad">Median absolute deviation (MAD)</A>
 8. Error Distribution
   
 __Sample dataset__: I will consider a sample test dataset to explain the metrices. The sample data contains 15 positive Y's & 15 negative Y's. It is a simple binary classification problem 
@@ -292,3 +292,23 @@ This means our model is performing worst than the average model. So $$R^2 < 0$$
 <p class='note'>Cons</p>
 
 $$R^2$$ is not very robust to outliers
+
+## Median absolute deviation (MAD)
+
+It overcomes the problem we had with $$R^2$$. Median is robust to outliers
+
+__Median__: It is the central tendancy or the midpoint of observed values
+
+__e__: It is the difference between the actual value & the predicted value i.e, 
+
+$$ e = y - y^ $$
+
+__MAD__: It is the median of the absolute difference between the error (e) and the median of errors for all data points
+
+$$MAD = median(|e - {median_e}|)$$
+
+where,
+
+$${median_e}$$ is the median of the errors 
+
+## Error Distribution
