@@ -312,3 +312,28 @@ where,
 $${median_e}$$ is the median of the errors 
 
 ## Error Distribution
+
+By using <a target="_blank" href="https://en.wikipedia.org/wiki/Probability_density_function">PDFs</a> & <a target="_blank" href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">CDFs</a> we can see the distribution of errors & so we can measure the performance of the models.
+
+![error distribution]({{site.baseurl}}data/images/dist_error.png)
+
+Observations:
+
+__PDF__: As we can see, most of the errors are having smaller values where as few errors are having larger values
+
+__CDF__: 95% of the errors are having the values less than 0.1 & only 5% of the errors are having values > 0.1.
+
+__Compare two models using CDFs of errors__
+
+![compare CDFs]({{site.baseurl}}data/images/cdf_compare.png)
+
+__Model M1__: 95% of the errors are having less than 0.1 value
+
+__Model M2__: 90% of the errors are having less than 0.1 value
+
+Since we always want errors to be zero or close to zero, __Model M1__ is better than __Model M2__, because more number of errors are close to zero in __Model M1__ than in __Model M2__
+
+__
+
+Thanks for reading. Please <a href="mailto:sachinkalsi15@gmail.com">contact me</a> regarding any queries or suggestions.
+
