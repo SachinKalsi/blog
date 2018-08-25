@@ -12,8 +12,8 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 2. <A href="#confusion-matrix">Confusion matrix</A>
 3. <A href="#precision-recall-f1-score">Precision, Recall & F1 score</A>
 4. <A href="#receiver-operating-characteristic-curve-roc">Receiver Operating Characteristic Curve (ROC)</A>
-5. Log-loss
-6. R-Squared Coefficient
+5. <A href="#log-loss"> Log-loss </A>
+6. <A href="#r-squared-coefficient"> R-Squared Coefficient </A>
 7. Median absolute deviation (MAD)
 8. Error Distribution
   
@@ -212,4 +212,83 @@ __Area Under ROC Curve (AOC)__: AOC is the area under the ROC curve. More the ar
 <i>Converting a dumb model into a reasonable good model<i>
 ![confusion_matrix]({{site.baseurl}}data/images/dumb_roc.png)
 
-A dumb model is one which has AUC an < 0.5 In that case just swap class labels i.e., change 1 to 0 & 0 to 1 (<code>Y_predicted = 1-Y_predicted</code>) to make it a reasonably good model
+A dumb model is one which has AUC an < 0.5 In that case just swap class labels i.e., change 1 to 0 & 0 to 1 (<code>Y_predicted = 1-Y_predicted</code>) to make it a reasonably good model.
+
+## Log loss
+
+It is an important metric & it uses probability scores to calculate the loss. This metric can be used for both binary classification & multi class classification. And it ranges from 0 to $$\infty$$ (infinity). Log loss is a loss, so we always wants to minimize the losses. Lower the loss, the good is the model.
+
+$$Log Loss = -\frac{1}{n}\sum_{i=1}^n \sum_{j=1}^c y_{ij}*log(p_i)$$
+
+where,
+
+__n__ = number of datapoints
+
+__c__ = number of class labels
+
+<span style="text-align: left; font-weight:bold;"> $$y_{ij}$$ </span> = 1 if data point $$x_{i}$$ belongs to class j else 0 
+
+<span style="text-align: left; font-weight:bold;"> $$p_{i}$$ </span> = probability of $$x_i$$ belonging to class j
+
+
+__Example__: Lets consider a binary classification dataset
+
+|  X        |  Y (actual) | Y^ <br> prob(Y==1)|log loss |log loss score|
+| :---:     | :---:|:---:|
+| $${x_1}$$ |  1  |  0.94 | -log(0.94)  |0.0269 |
+| $${x_2}$$ |  0  |  0.20 | -log(1-0.20) | 0.0969|
+| $${x_3}$$ |  1  |  0.70 | -log(0.70) | 0.1549 |
+| $${x_4}$$ |  1  |  0.49 | -log(0.49) | 0.3979 |
+
+As we can see from the above table, the data point $${x_1}$$ is having higher probability of belonging to class label 1 & so its log loss is less comparitively, where as for the data point $${x_4}$$, the log loss is higher because its probability is almost half, i.e., the probability of $${x_4}$$ belonging to 1 or 0 is almost same.
+
+<p class='note'>Cons</p>
+
+Difficult to interpret the log loss score.
+
+## R-Squared Coefficient
+
+This metric is used to measure the performance of a regression problem (Y belongs to real values).
+Lets Y^ denotes the predicted values & Y denotes the actual values.
+
+|  X        |  Y (actual) | Y^ |
+| :---:     | :---:|:---:|
+| $${x_1}$$ |  1.90  |  1.94 |
+| $${x_2}$$ |  1.34  | 1.20 | 
+| $${x_3}$$ |  0.34  |  0.56 |
+
+
+__Sum of Squares__ (total): The simplest regression model one can build is the average model i.e, predicted value will be equal to average of all actual Y values.
+
+$${SS_{total}} = \sum_{i=1}^n (y- \overline{y})^2$$ 
+
+where, 
+$$\overline{y} $$ is the average of all y values
+
+__Sum of Squares__ (residual): Residual means the error, which is the difference between the predicted value & real value.  Lets say y^ is the predicted value which is predicted using regression algorithms like linear regression.
+
+$${SS_{res}} = \sum_{i=1}^n (y-y\hat{}) ^2$$
+  
+__R Squared__: It combines both $${SS_{total}}$$ & $${SS_{res}} $$
+
+$$R^2 = 1- \frac{SS_{res}}{SS_{total}}$$
+
+__Case 1__: $${SS_{res}} = 0$$
+
+This is the best case ever could happen, i.e., predicted values are equal to actual values, so zero errors, therefore $$R^2 = 1$$ for the best case
+
+__Case 2__: $${SS_{res}} < {SS_{total}}$$
+
+This means our model is performing better than the average model. The values of $$R^2$$ ranges from 0 to 1.
+
+__Case 3__: $${SS_{res}} = {SS_{total}}$$
+
+This means our model is performing as good as the average model. So $$R^2 = 0$$ 
+
+__Case 4__: $${SS_{res}} > {SS_{total}}$$
+
+This means our model is performing worst than the average model. So $$R^2 < 0$$
+
+<p class='note'>Cons</p>
+
+$$R^2$$ is not very robust to outliers
