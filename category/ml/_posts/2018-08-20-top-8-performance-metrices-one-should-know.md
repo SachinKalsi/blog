@@ -2,7 +2,7 @@
 tags: 'machine learning, mathematics, key performance indicators (KPIs)'
 published: true
 image: 'data/images/blog_posts/kpi.jpg'
-min_to_read: 10
+min_to_read: 13
 ---
 
 There are various machine learning algorithms like KNN, Naive Bayes, Logistic Regression, Linear Regression, SVM, Ensemble models etc etc. But how do you measure the performance of these models ? Is there any one metric which will define how good a model is ? Well, in this blog I will discuss about the important KPIs (Key Performance Indicators) to measure the performance of a Machine Learning Model
