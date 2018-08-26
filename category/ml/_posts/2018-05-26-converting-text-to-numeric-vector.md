@@ -1,7 +1,7 @@
 ---
 tags: 'machine learning, mathematics, tf idf, bow, vectors'
 published: true
-min_to_read: 4
+min_to_read: 5
 ---
 In order to apply any Machine Learning algorithm, we have to convert all non-numerical data to numerical data.
 
