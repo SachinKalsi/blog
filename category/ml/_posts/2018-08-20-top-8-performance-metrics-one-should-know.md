@@ -15,7 +15,7 @@ There are various machine learning algorithms like KNN, Naive Bayes, Logistic Re
 5. <A href="#log-loss"> Log-loss </A>
 6. <A href="#r-squared-coefficient"> R-Squared Coefficient </A>
 7. <A href="#median-absolute-deviation-mad">Median absolute deviation (MAD)</A>
-8. Error Distribution
+8. <A href="#error-distribution">Error Distribution</A>
   
 __Sample dataset__: I will consider a sample test dataset to explain the metrices. The sample data contains 15 positive Y's & 15 negative Y's. It is a simple binary classification problem 
 
