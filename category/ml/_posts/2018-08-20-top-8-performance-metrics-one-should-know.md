@@ -199,7 +199,7 @@ __Random Model__: Model which generates randomly 0 & 1's
 
 __Good Model__: Model which has high TPR & low FPR
 
-__Area Under ROC Curve (AOC)__: AOC is the area under the ROC curve. More the area under the curve, the more good is the model. A random model will have an AOC of 0.5
+__Area Under ROC Curve (AUC)__: AUC is the area under the ROC curve. More the area under the curve, the more good is the model. A random model will have an AUC of 0.5
 
 <p class='note'>Cons</p>
 
