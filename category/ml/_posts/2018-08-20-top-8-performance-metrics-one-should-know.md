@@ -222,6 +222,8 @@ $$Log Loss = -\frac{1}{n}\sum_{i=1}^n \sum_{j=1}^c y_{ij}*log(p_i)$$
 
 where,
 
+__log__ = natural log
+
 __n__ = number of datapoints
 
 __c__ = number of class labels
