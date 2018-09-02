@@ -84,24 +84,24 @@ Click [here](https://www.kaggle.com/c/facebook-recruiting-iii-keyword-extraction
 
 <b><i>It is a multi-label classification problem.</i></b>
 
-In Multi-label Classification, multiple labels may be assigned to each instance and there is no constraint on how many of the classes the instance can be assigned to.
+In Multi-label Classification, multiple labels (in this problem its tags) may be assigned to each instance and there is no constraint on how many of the classes the instance can be assigned to.
 Source: [Wiki](https://en.wikipedia.org/wiki/Multi-label_classification){:target="blank"}
 
-Find more about multi-label classification [here](http://scikit-learn.org/stable/modules/multiclass.html){:target="blank"}
+Find more about multi-label classification problem [here](http://scikit-learn.org/stable/modules/multiclass.html){:target="blank"}
 
 A question on Stackoverflow might be about any of C, Pointers, JAVA, Regex, FileIO and/or memory-management at the same time or none of these.
 
 ### Performance metric
 
-1. Micro f1 score
-2. Macro f1 score:
+1. Micro F1 score
+2. Macro F1 score:
 
-I have discussed in detail about the Performance metrices [here](https://goo.gl/UJdNps){:target="blank"}
+I have already discussed in detail about the performance metrices in my previous [blog](https://goo.gl/Z4AP95){:target="blank"} post. Please read [this](https://goo.gl/UJdNps){:target="blank"} blog to know more about Micro & Macro F1 scores.
 
 ---
 ## EDA (Exploratory Data Analysis)
 
-I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to load the data. Please visit my github repo to see the full code. I have taken a sample of 1000000 data points from Train.csv Here is a list of major observations from EDA.
+I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to load the data. Please visit my github repo to see the full code. I have taken a sample of 1000000 (10 lakh) data points from Train.csv. Here is a list of major observations from EDA.
 
 1. <b>Number of rows in the database:</b> 6034196
 2. <b>5.6% of the questions are duplicate:</b> Number of rows after removing duplicates:  943582
@@ -140,12 +140,23 @@ I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to loa
   <li><b>Give more weightage to title: Add title three times to the question</b>. Title contains the information which is more specific to the question and also only after seeing the question title, a user decides whether to look into the question in detail. At least most of the users do this if not all </li>
 </ol>
 
-Sample question after preprocessing:
+<h5>Sample question after preprocessing:</h5>
 
-<i><b>modifi whoi contact detail modifi whoi contact detail modifi whoi contact detail use modifi function display warn mesag pleas help modifi contact detail</b></i>
+<i>"modifi whoi contact detail modifi whoi contact detail modifi whoi contact detail use modifi function display warn mesag pleas help modifi contact detail"</i>
 
 ---
-Machine Learning Models
+## Machine Learning Models
+
+<i>
+Total number of questions: 500000<br>
+Total number of tags: 30645
+</i>
+
+Here we are going to use <i><b>Problem Transformation(Binary Relevance)</b></i> method to solve the problem.
+
+<h5>Binary Relevance:</h5> Here we are going to convert multi-label classification problem to multiple single class classification problems. Basically in this method, we treat each label (in our case its tag) as a separate single class classification problem. This technique is simple and is widely used.
+
+Please refer to [analytics vidhya's blog](https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/){:target="_blank"} to know more about the techniques to solve a Multi-Label classification problem
 
 ---
 
