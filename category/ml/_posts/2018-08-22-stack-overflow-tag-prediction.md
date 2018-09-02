@@ -154,9 +154,32 @@ Total number of tags: 30645
 
 Here we are going to use <i><b>Problem Transformation(Binary Relevance)</b></i> method to solve the problem.
 
-<h5>Binary Relevance:</h5> Here we are going to convert multi-label classification problem to multiple single class classification problems. Basically in this method, we treat each label (in our case its tag) as a separate single class classification problem. This technique is simple and is widely used.
+<h4>Binary Relevance:</h4> Here we are going to convert multi-label classification problem into multiple single class classification problems.For example if we are having 5 multi-label classification problem, then we need to train 5 single class classification models.
 
-Please refer to [analytics vidhya's blog](https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/){:target="_blank"} to know more about the techniques to solve a Multi-Label classification problem
+ Basically in this method, we treat each label (in our case its tag) as a separate single class classification problem. This technique is simple and is widely used.
+
+Please refer to [analytics vidhya's blog](https://www.analyticsvidhya.com/blog/2017/08/introduction-to-multi-label-classification/){:target="_blank"} to know more about the techniques to solve a Multi-Label classification problem.
+
+<h4>Downscaling of data</h4>
+Coming back to our stackoverflow predictor problem, we need to train 30645 models literally!!!
+Thats really huge (both in terms of time & speed) for a system with 8GM RAM & i5 processor. So we will sample the number of tags instead considering all of them. But how much to sample without loosing much information ? Plotting 'percentage of questions covered' Vs 'Number of tags' would help to solve this.
+
+!['percentage of questions covered' Vs 'Number of tags']({{site.baseurl}}data/images/stackoverflow/percentage_of_questions_covered.png)
+
+<i>Observations</i>
+<ol>
+  <li>with  500 tags we are covering  89.782 % of questions</li>
+  <li>with  600 tags we are covering  91.006 % of questions</li>
+  <li>with  5500 tags we are covering  99.053 % of questions</li>
+</ol>
+
+By using only 600 tags (2% approximately) of the total 30645 tags we are loosing only 9% of the questions & also training 600 models is reasonable (Of course it also depends on the type of machine learning algo we choose). So we shall choose 600 tags.
+
+<h4>Train and Test data</h4>
+
+If the data had timestamp attached for each of the questions, then we could have splitted data with respect to temporal order. Since the data is not of temporal nature (i.e., no timestamp), we are splitting data randomly into train set & test set
+
+<h4>Featurizing Text Data</h4>
 
 ---
 
