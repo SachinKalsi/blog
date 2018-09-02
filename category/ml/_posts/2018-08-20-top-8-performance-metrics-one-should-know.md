@@ -171,6 +171,8 @@ It is the simple average of F1 scores of all labels. This does not take into acc
 
 $$F1_{macro} = \frac{1}{|C|}\sum_{k∈C}F1Score_k$$
 
+For info on F1 score click<a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank">here</a>
+
 ## Receiver Operating Characteristic Curve (ROC)
 
 __ROC__ curve is a curve which is created by plotting TPR agains FPR. ROC Curve metric is applicable only for binary classification. Here is step by step procedure to draw ROC curve.
