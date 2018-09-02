@@ -142,7 +142,7 @@ I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to loa
 
 <h5>Sample question after preprocessing:</h5>
 
-<i>"modifi whoi contact detail modifi whoi contact detail modifi whoi contact detail use modifi function display warn mesag pleas help modifi contact detail"</i>
+>"modifi whoi contact detail modifi whoi contact detail modifi whoi contact detail use modifi function display warn mesag pleas help modifi contact detail"
 
 ---
 ## Machine Learning Models
