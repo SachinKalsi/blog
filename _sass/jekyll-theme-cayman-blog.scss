@@ -31,7 +31,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
@@ -194,15 +194,21 @@ a {
   }
 
   h1,
-  h2,
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: $section-headings-weight;
+    color: $section-headings-color;
+  }
+  
   h3,
   h4,
   h5,
   h6 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-weight: normal;
-    color: $section-headings-color;
+    font-weight: 600;//$section-headings-weight;
+    color: #b31d1d //$section-headings-color;
   }
 
   p {

@@ -142,6 +142,35 @@ $$F1 score = 2 *\frac{Precision*Recall}{Precision+Recall}$$
 
 This metric is extensively used in <a target="_blank" href="https://www.kaggle.com/">Kaggle</a> compitations. But Precision & Recall is more interpretable or I can say F1 score is difficult to interpret.
 
+### Modification of F1 Score For Multi label classification
+
+In Multi-label Classification, multiple labels may be assigned to each instance and there is no constraint on how many of the classes the instance can be assigned to.
+Source: [Wiki](https://en.wikipedia.org/wiki/Multi-label_classification)
+
+There are two variations of F1 Scores
+
+<b>Micro F1 Score</b>:
+
+Calculate metrics globally by counting the total true positives, false negatives and false positives.
+
+Lets say we have <code>C</code> labels, then Micro F1 score is defined as
+
+$$F1_{micro} = 2 *\frac{Precision_{micro}*Recall_{micro}}{Precision_{micro}+Recall_{micro}}$$
+
+where,
+
+$${Precision_{micro}}=\frac{\sum_{k∈C}TP_k}{\sum_{k∈C}(TP_k + FP_k)} $$
+
+$${Recall_{micro}}=\frac{\sum_{k∈C}TP_k}{\sum_{k∈C}(TP_k + FN_k)} $$
+
+This is a better metric when we have class imbalance since it does take into account about the label frequency
+
+<b>Macro f1 score</b>: 
+
+It is the simple average of F1 scores of all labels. This does not take into account about the label frequency.
+
+$$F1_{macro} = \frac{1}{|C|}\sum_{k∈C}F1Score_k$$
+
 ## Receiver Operating Characteristic Curve (ROC)
 
 __ROC__ curve is a curve which is created by plotting TPR agains FPR. ROC Curve metric is applicable only for binary classification. Here is step by step procedure to draw ROC curve.
