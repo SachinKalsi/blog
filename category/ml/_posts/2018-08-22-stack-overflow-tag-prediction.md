@@ -177,9 +177,75 @@ By using only 600 tags (2% approximately) of the total 30645 tags we are loosing
 
 <h4>Train and Test data</h4>
 
-If the data had timestamp attached for each of the questions, then we could have splitted data with respect to temporal order. Since the data is not of temporal nature (i.e., no timestamp), we are splitting data randomly into train set & test set
+If the data had timestamp attached for each of the questions, then we could have splitted data with respect to temporal order. Since the data is not of temporal nature (i.e., no timestamp), we are splitting data randomly into 80% train set & 20% test set
 
-<h4>Featurizing Text Data</h4>
+<pre><code><b>train_datasize= 0.8 * preprocessed_title_more_weight_df.shape[0]
+x_train = preprocessed_title_more_weight_df[:int(train_datasize)]
+x_test = preprocessed_title_more_weight_df[int(train_datasize):]
+y_train = multilabel_yx[0:train_datasize,:]
+y_test = multilabel_yx[train_datasize:,:]
+</b></code></pre>
+
+<h4>Featurizing Text Data with TfIdf vectorizer</h4>
+
+There are various ways to featurize text data. I have explained this deeply in my [blog](https://goo.gl/g1cB6z){:target="_blank"} post. First lets featurize the question data with TfIdf vectorizer. [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html){:target="_blank"} of sklearn helps here
+
+<pre><code><b>vectorizer = TfidfVectorizer(min_df=0.00009, max_features=200000, smooth_idf=True, norm="l2",sublinear_tf=False, ngram_range=(1,3))
+x_train_multilabel = vectorizer.fit_transform(x_train['questions'])
+x_test_multilabel = vectorizer.transform(x_test['questions'])
+</b></code></pre>
+
+Dimensions of train data X: (400000, 90809) Y : (400000, 600)
+
+Dimensions of test data X: (100000, 90809) Y: (100000, 600)
+
+<h5>Applying Logistic Regression with OneVsRest Classifier (for tfidf vectorizers)</h5>
+
+Lets use Logistic Regression algo to train 600 models (600 tags). We shall use [OneVsRestClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html){:target="_blank"} of sklearn to achieve the same
+
+<pre><code><b>classifier = OneVsRestClassifier(LogisticRegression(penalty='l1'), n_jobs=-1)
+classifier.fit(x_train_multilabel, y_train)
+predictions = classifier.predict(x_test_multilabel)
+</b></code></pre>
+
+<b><u>Results</u></b>
+
+Micro F1-measure: 0.4950
+
+Macro F1-measure: 0.3809
+
+<h4>Featurizing Text Data with Bag Of Words (BOW) vectorizer</h4>
+
+This time lets featurize the question data with BOW upto 4 grams.
+
+<i><b> I did try this but my system was giving out of memory error.</b> So again I have to downscale the data.</i> Here is train & test data after downscaling
+
+Dimensions of train data X: (80000, 200000) Y : (80000, 600)
+
+Dimensions of test data X: (20000, 200000) Y: (20000, 600)
+
+<pre><code><b>vectorizer = CountVectorizer(min_df=0.00001,max_features=200000, ngram_range=(1,4))
+x_train_multilabel = vectorizer.fit_transform(x_train['questions'])
+x_test_multilabel = vectorizer.transform(x_test['questions'])</b></code></pre>
+
+<h5>Applying Logistic Regression with OneVsRest Classifier (for BOW vectorizers)</h5>
+
+<pre><code><b>classifier = OneVsRestClassifier(LogisticRegression(penalty='l1'))
+classifier.fit(x_train_multilabel, y_train)
+predictions = classifier.predict(x_test_multilabel)</b></code></pre>
+
+<b><u>Results</u></b>
+
+Micro F1-measure: 0.4781
+
+Macro F1-measure: 0.3655
+
+<h5>Hyperparameter tuning on alpha for Logistic Regression to improve performance</h5>
+
+I did tried tuning the Hyperparameter alpha for Logistic Regression, but I didn't find any significant improvement (or even small improvement) in the performance, either in micro-f1 score or macro f1-score
+
+<h4>OneVsRestClassifier with Linear-SVM</h4>
+
 
 ---
 
