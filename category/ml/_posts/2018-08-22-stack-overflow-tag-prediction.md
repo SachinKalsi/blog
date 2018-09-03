@@ -260,7 +260,7 @@ Macro F1-measure: 0.2430
 
 <h3><u>Observations</u></h3>
 
-Of all the models we used so far, <i>Logistic Regression with TfIdf vectorizer and n_grams=(1,3)</i> performed better than rest of the models. But we have trained the model with higher data points, so comparing this model with rest the models, which are trained with lesser data points, will not make sense. So we need to train Logistic Regression model with TfIdf vectorizer & n_grams=(1,3) with 100K data points. So the comparision between the models will be reasonable
+Of all the models we used so far, <i>Logistic Regression with TfIdf vectorizer and n_grams=(1,3)</i> performed better than rest of the models. But we have trained the Logistic Regression model with large number of data points, so comparing this model with rest the models, which are trained with lesser data points, will not make sense. So we need to train Logistic Regression model with TfIdf vectorizer & n_grams=(1,3) with 100K data points. So the comparision between the models will be reasonable
 
 Here is the result of all the models
 
