@@ -332,5 +332,3 @@ As you might have noticied, I have taken simplest model like Logistic Regression
 <i>Any input/suggestions are most welcome @[Kalsi](mailto:sachinkalsi15@gmail.com)</i>
 
 Thank you for reading
-
-<i><b>P.S:</b> I will be uploading the code for this case study very soon</i>
