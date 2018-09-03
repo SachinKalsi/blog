@@ -9,6 +9,8 @@ If you are a software engineer or a programmer you must have used [stackoverflow
 
 ---
 
+### Github code repo: [stackoverflow tag preditor](https://github.com/SachinKalsi/machine-learning-case-studies/tree/master/stackoverflow_tag_preditor){:target="_blank"}
+
 ## Problem Statement
 
 Predict the tags (a.k.a. keywords, topics, summaries), given only the question text and its title.
@@ -101,7 +103,7 @@ I have discussed in detail about the performance metrices in my previous [blog](
 ---
 ## EDA (Exploratory Data Analysis)
 
-I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to load the data. Please visit my github repo to see the full code. I have taken a sample of 1000000 (10 lakh) data points from Train.csv. Here is a list of major observations from EDA.
+I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to load the data. Please visit [my github repo](https://github.com/SachinKalsi/machine-learning-case-studies/tree/master/stackoverflow_tag_preditor){:target="_blank"} to see the full code. I have taken a sample of 1000000 (10 lakh) data points from Train.csv. Here is a list of major observations from EDA.
 
 1. <b>Number of rows in the database:</b> 1000000
 2. <b>5.6% of the questions are duplicate:</b> Number of rows after removing duplicates:  943582
