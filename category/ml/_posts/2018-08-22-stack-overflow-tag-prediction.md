@@ -177,7 +177,7 @@ By using only 600 tags (2% approximately) of the total 30645 tags we are loosing
 
 <h4>Train and Test data</h4>
 
-If the data had timestamp attached for each of the questions, then we could have splitted data with respect to temporal order. Since the data is not of temporal nature (i.e., no timestamp), we are splitting data randomly into 80% train set & 20% test set
+If the data had timestamp attached for each of the questions, then splitting data with respect to its temporal nature would have made more sense than splitting data randomly. But since the data is not of temporal nature (i.e., no timestamp), we are splitting data randomly into 80% train set & 20% test set
 
 <pre><code><b>train_datasize= 0.8 * preprocessed_title_more_weight_df.shape[0]
 x_train = preprocessed_title_more_weight_df[:int(train_datasize)]
@@ -246,8 +246,83 @@ I did tried tuning the Hyperparameter alpha for Logistic Regression, but I didn'
 
 <h4>OneVsRestClassifier with Linear-SVM</h4>
 
+Lets use Linear-SVM algo to train 600 models. Linear-SVM is nothing but SGDClassifier with loss as `hinge`. After finding the hyperparameter `alpha` using [GridSearchCV](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html){:target="_blank"} , I found out `alpha` to be 0.001
+
+<pre><code><b>classifier = OneVsRestClassifier(SGDClassifier(loss='hinge', alpha=grid_search.best_params_['estimator__alpha'], penalty='l1',  max_iter=1000,tol=0.0001 ), n_jobs=-1)
+classifier.fit(x_train_multilabel, y_train)
+predictions = classifier.predict(x_test_multilabel)</b></code></pre>
+
+<b><u>Results</u></b>
+
+Micro F1-measure: 0.4007
+
+Macro F1-measure: 0.2430
+
+<h3><u>Observations</u></h3>
+
+Of all the models we used so far, <i>Logistic Regression with TfIdf vectorizer and n_grams=(1,3)</i> performed better than rest of the models. But we have trained the model with higher data points, so comparing this model with rest the models, which are trained with lesser data points, will not make sense. So we need to train Logistic Regression model with TfIdf vectorizer & n_grams=(1,3) with 100K data points. So the comparision between the models will be reasonable
+
+Here is the result of all the models
+
+<table>
+  <tr>
+    <th>Model Used</th>
+    <th>Number of Data Points Used</th>
+    <th>F1-micro score</th>
+    <th>F1-macro score</th>
+  </tr>
+  <tr>
+    <td>Logistic Regression (with TfIdf vectorizer, n_grams=(1,3))</td>
+    <td>500K</td>
+    <td>0.4950</td>
+    <td>0.3809</td>
+  </tr>
+  <tr>
+    <td>Logistic Regression (with TfIdf vectorizer, n_grams=(1,3))</td>
+    <td>100K</td>
+    <td>0.4648</td>
+    <td>0.3391</td>
+  </tr>
+  <tr style="background-color: #c9f5c9;">
+    <td><b>Logistic Regression (with BOW vectorizer, n_grams=(1, 4), alpha=1)</b></td>
+    <td><b>100K</b></td>
+    <td><b>0.4781</b></td>
+    <td><b>0.3655</b></td>
+  </tr>
+  <tr>
+    <td>Logistic Regression (with BOW vectorizer, n_grams=(1, 4), alpha = 6 (from hyperparameter tuning))</td>
+    <td>100K</td>
+    <td>0.4774</td>
+    <td>0.3676</td>
+  </tr>
+  <tr>
+    <td>Linear-SVM (with BOW vectorizer, n_grams=(1, 4))</td>
+    <td>100K</td>
+    <td>0.4007</td>
+    <td>0.2430</td>
+  </tr>
+</table>
+
+Logistic Regression (with BOW vectorizer, n_grams=(1, 4), alpha=1) performed better than rest of the models
+
+
+## Problem with complex models like Random Forests or GBDT ?
+
+As you might have noticied, I have taken simplest model like Logistic Regression & Linear SVM to train the model. Here is the two primary main reasons why the complex models were not tried
+
+1. <b>High dimentional data:</b> since we are converting text to TfIdf or BOW vectors, the dimensions we get are very large in size. And when the dimensions are large, typically Random Forests & GBDT won't work well.
+2. <b>Too many models to train:</b> We have literally 600 models to train (after downscaling of data). And Logistic Regression is the simplest model one can use & it is comparitively faster. If we start using other models like RBF-SVM or RF, it will take too much time to train the model. For me it took more than 16 hours of time to train Linear SVM, that too after downscaling of data by large margin
+
+## Enhancements:
+
+1. To try with more data points (on a system with 32GB RAM & highend processor)
+2. <b>Featurizing Text Data with Word2Vec:</b> When you try Word2Vec, the dimentionality of data reduces & hence complex models like Random Forests or GBDT might work well
+3. Try using [scikit-multilearn](http://scikit.ml/){:target="_blank"} library. Please note that this library doesn't take sparse matrix as input, you need to give dense matrix as input.So obviously you need to have more RAM to use this library
 
 ---
 
-<i>Coming soon</i>
- 
+<i>As input/suggestions are most welcome @[Kalsi](mailto:sachinkalsi15@gmail.com)</i>
+
+Thank you for reading
+
+<i><b>P.S:</b> I will be uploading the code for this case study very soon</i>
