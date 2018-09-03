@@ -114,7 +114,7 @@ I have used [pandas](https://pandas.pydata.org/){:target="blank"} library to loa
     1. Maximum number of tags per question: 5
     2. Minimum number of tags per question: 1
     3. Avg. number of tags per question: 2.887779
-    4. Questions with 3 tags appears more in number
+    4. Questions with 3 tags appeared more in number
     ![Number of tags in the question]({{site.baseurl}}data/images/stackoverflow/question_with_tag_frequency.png)
     5. Word cloud of tags
     ![Word cloud of tags]({{site.baseurl}}data/images/stackoverflow/word_cloud.png)
