@@ -164,7 +164,7 @@ Please refer to [analytics vidhya's blog](https://www.analyticsvidhya.com/blog/2
 
 <h4>Downscaling of data</h4>
 Coming back to our stackoverflow predictor problem, we need to train 30645 models literally!!!
-Thats really huge (both in terms of time & speed) for a system with 8GM RAM & i5 processor. So we will sample the number of tags instead considering all of them. But how many tags to be sampled with the minimal information loss ? Plotting 'percentage of questions covered' Vs 'Number of tags' would help to solve this.
+Thats really huge (both in terms of time & speed) for a system with 8GB RAM & i5 processor. So we will sample the number of tags instead considering all of them. But how many tags to be sampled with the minimal information loss ? Plotting 'percentage of questions covered' Vs 'Number of tags' would help to solve this.
 
 !['percentage of questions covered' Vs 'Number of tags']({{site.baseurl}}data/images/stackoverflow/percentage_of_questions_covered.png)
 
