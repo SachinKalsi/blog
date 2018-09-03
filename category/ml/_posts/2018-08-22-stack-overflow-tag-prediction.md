@@ -173,7 +173,7 @@ Thats really huge (both in terms of time & speed) for a system with 8GM RAM & i5
   <li>with  5500 tags we are covering  99.053 % of questions</li>
 </ol>
 
-By using only 600 tags (2% approximately) of the total 30645 tags we are loosing only 9% of the questions & also training 600 models is reasonable (Of course it also depends on the type of machine learning algo we choose). So we shall choose 600 tags.
+By choosing only 600 tags (2% approximately) of the total 30645 tags we are loosing only 9% of the questions & also training 600 models is reasonable (Of course it also depends on the type of machine learning algo we choose). So we shall choose 600 tags.
 
 <h4>Train and Test data</h4>
 
