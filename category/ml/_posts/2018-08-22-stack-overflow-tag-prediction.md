@@ -218,7 +218,7 @@ Macro F1-measure: 0.3809
 
 This time lets featurize the question data with BOW upto 4 grams.
 
-<i><b> I did try this but my system was giving out of memory error.</b> So again I have to downscale the data.</i> Here is train & test data after downscaling
+<i><b> I did try Featurizing Text Data with Bag Of Words, but my system was giving out of memory error.</b> So again I have to downscale the data.</i> Here is train & test data after downscaling
 
 Dimensions of train data X: (80000, 200000) Y : (80000, 600)
 
