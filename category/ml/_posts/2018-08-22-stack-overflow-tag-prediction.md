@@ -301,6 +301,12 @@ Here is the result of all the models
     <td>0.4007</td>
     <td>0.2430</td>
   </tr>
+  <tr>
+    <td>Linear-SVM (with tfidf vectorizer, n_gram=(1, 3))</td>
+    <td>100K</td>
+    <td>0.4648</td>
+    <td>0.2900</td>
+  </tr>
 </table>
 
 Logistic Regression (with BOW vectorizer, n_grams=(1, 4), alpha=1) performed better than rest of the models
