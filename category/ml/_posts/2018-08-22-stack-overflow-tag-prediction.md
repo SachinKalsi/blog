@@ -327,7 +327,7 @@ As you might have noticied, I have taken simplest model like Logistic Regression
 
 ---
 
-<i>As input/suggestions are most welcome @[Kalsi](mailto:sachinkalsi15@gmail.com)</i>
+<i>Any input/suggestions are most welcome @[Kalsi](mailto:sachinkalsi15@gmail.com)</i>
 
 Thank you for reading
 
