@@ -234,7 +234,7 @@ __Area Under ROC Curve (AUC)__: AUC is the area under the ROC curve. More the ar
 
 <p class='note'>Cons</p>
 
-1. __Imbalanced dataset__: For a imbalanced dataset, a dumb model can give a high AUC.
+1. __Imbalanced dataset__: For an imbalanced dataset, a dumb model might give high AUC, which may be misleading sometimes.
 
 2. Depends on the ORDERing of the scores & doesn't depends the scores itself.
 
