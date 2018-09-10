@@ -8,6 +8,14 @@ Linear algebra for machine learning
 
 ___
 
+
+1. <A href="#1-distance-between-two-points">Distance between two points</A>
+2. <A href="#2-dot-product-and-angle-between-2-vectors">Dot product and angle between 2 vectors</A>
+3. <A href="#3-equation-of-a-line-plane">Equation of a line, plane</A>
+4. <A href="#4-projection-of-a-vector">Projection of a vector</A>
+5. <A href="#5-distance-of-a-point-from-a-plane"> Distance of a point from a plane </A>
+6. <A href="#6-equation-of-a-circle"> Equation of a circle </A>
+
 ## 1. Distance between two points
 
 * Let A & B be two points in 2 dimensional geometry.
@@ -62,7 +70,7 @@ ___
     3. Minkowski distance(A,B) =
         $$({|x_{a1}-x_{b1}|^p + |x_{a2}-a_{b2}|^p+ ... + |x_{an}-x_{bn}|^p})^{1/p} $$
 
-## 2.  Dot product and angle between 2 vectors
+## 2. Dot product and angle between 2 vectors
 
 a & b points are in n dimensional vectors, i.e.,
 
@@ -89,7 +97,7 @@ where a = distance of a from origin & b = distance of b from origin
 
 $$\theta =arccos(\frac{a^T.b}{|a| * |b|})$$
 
-## 3.  Equation of a line, plane
+## 3. Equation of a line, plane
 
 <p class='note'> Line in 2D = Plane in 3D = hyper plane in nD</p>
 - #### 2 dimensional geometry
@@ -131,7 +139,7 @@ $$\theta =arccos(\frac{a^T.b}{|a| * |b|})$$
 
     **$$\therefore$$ $$w$$ is perpendicular to any point on plane $$x$$, provided plane passes through origin**
 
-## 4. Projection of a point
+## 4. Projection of a vector
 
 Let $$a$$ & $$b$$ be two vectors and $$\theta$$ be the angle between them.
 
