@@ -42,6 +42,11 @@ ___
     - #### Manhatten distance
 
         $$distance(A,B) = |x_1-x_2| + |y_1-y_2|$$
+        
+        In case the movement on diagonal side is allowed,
+        
+        $$distance(A,B) = max(|x_1-x_2| , |y_1-y_2|)$$
+        
 
     - #### Minkowski distance (Generalisation)
 
