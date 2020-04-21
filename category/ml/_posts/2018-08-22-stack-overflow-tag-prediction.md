@@ -5,7 +5,7 @@ image: 'data/images/blog_posts/stackoverflow.png'
 min_to_read: 20
 ---
 
-If you are a software engineer or a programmer you must have used [stackoverflow](https://stackoverflow.com){:target="_blank"} atleast once in your life time. But have you ever wondered how stackoverflow predicts the tags for a given question ? In this blog, I will discuss about <b>stackoverflow tag predictor</b> case study which I have done as a part of the course in [appliedaicourse](https://www.appliedaicourse.com/){:target="_blank"}
+If you are a software engineer or a programmer you must have used [stackoverflow](https://stackoverflow.com){:target="_blank"} atleast once in your life time. But have you ever wondered how stackoverflow predicts the tags for a given question ? In this blog, I will discuss about <b>stackoverflow tag predictor</b> case study.
 
 ---
 
